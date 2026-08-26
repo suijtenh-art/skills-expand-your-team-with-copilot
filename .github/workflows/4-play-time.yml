@@ -54,7 +54,7 @@ jobs:
           issue-number: ${{ env.ISSUE_NUMBER }}
           file: ${{ env.REVIEW_FILE }}
       - name: Disable current workflow
-        run: gh workflow disable "${{github.workflow}}"
+        run: gh workflow disable "${{github.workflow}}" || true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
